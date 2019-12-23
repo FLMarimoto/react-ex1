@@ -6,19 +6,38 @@ import UserOutput from './UserOutput/UserOutput'
 import './App.css';
 
 class App extends Component {
+  state = {
+    usernames: [
+      'Filipe',
+      'Max',
+      'Jane'
+    ]
+  }
+
+  usernameChangedHandler = (event) => {
+    this.setState({
+      usernames: [
+        'Filipe',
+        event.target.value,
+        'Jane'
+      ]
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Exercise 1</h1>
         <UserInput />    
         <UserOutput 
-          username="Filipe"/>    
-        <UserInput />    
+          username={this.state.usernames[0]}/>    
+        <UserInput 
+          changed={this.usernameChangedHandler}/>    
         <UserOutput 
-          username="Max"/>    
+          username={this.state.usernames[1]}/>    
         <UserInput /> 
         <UserOutput
-          username="Jane"/>    
+          username={this.state.usernames[2]}/>    
       </div>
     );
   }
