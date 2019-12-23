@@ -11,11 +11,14 @@ class App extends Component {
       <div className="App">
         <h1>Exercise 1</h1>
         <UserInput />    
-        <UserOutput />    
+        <UserOutput 
+          username="Filipe"/>    
         <UserInput />    
-        <UserOutput />    
-        <UserInput />    
-        <UserOutput />    
+        <UserOutput 
+          username="Max"/>    
+        <UserInput /> 
+        <UserOutput
+          username="Jane"/>    
       </div>
     );
   }
